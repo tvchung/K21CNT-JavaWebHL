@@ -10,8 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    @Autowired
-    private EmployeeMapper employeeMapper;
+
     @Autowired
     private EmployeeService employeeService ;
 

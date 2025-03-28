@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeService {
     @Autowired
-    EmployeeMapper employeeMapper;
+    private final EmployeeMapper employeeMapper;
     private List<Employee> employeeList;
 
     public EmployeeService(EmployeeMapper employeeMapper) {
@@ -27,7 +27,7 @@ public class EmployeeService {
                 .map(emp-> employeeMapper.toEmployeeRequest(emp)).collect(Collectors.toList());
     }
     public void employeeAdd(EmployeeRequest employeeRequest) {
-        employeeMapper = new EmployeeMapper();
+//        employeeMapper = new EmployeeMapper();
         Employee employee = employeeMapper.toEmployee(employeeRequest);
         employeeList.add(employee);
     }
